@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,10 +74,25 @@ WSGI_APPLICATION = 'programandoweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'programa_pgrw',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost', 
+        'OPTIONS': {
+            'use_unicode' : True,
+            'charset' : 'utf8',
+            'read_default_file': 'C:\Program Files\MariaDB 10.6\data\my.ini',
+        },
     }
 }
 
